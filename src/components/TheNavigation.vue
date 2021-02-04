@@ -5,9 +5,13 @@
       <router-link to="/"> Home </router-link>
           </li>
           <li v-for="destination of destinations" :key="destination.id" class="links">
-            <router-link :to="{name: 'DestinationDetails', params: {id: destination.id}}"> 
+            <router-link :to="{name: 'DestinationDetails', params: {slug: destination.slug}}"> 
                 {{ destination.name }}
             </router-link>
+          </li>
+          <li>
+      <router-link to="/user"> Dashboard </router-link>
+
           </li>
       </ul>
   </nav>
@@ -19,6 +23,7 @@
   padding: 30px;
    display: flex;
     align-items: center;
+    position: sticky;
 }
 
 #nav a {
